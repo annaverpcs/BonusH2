@@ -30,12 +30,13 @@ Feature: Smoke steps
   Scenario: Incorrect First Name in Student Registration
     Given I open url "http://ask-int.portnov.com/#/registration"
     Then element with xpath "//h4[contains(text(),'Registration')]" should contain text "Registration"
-    # leave First Name textfield empty
+    # leave First Name text field empty
     And I type "LastName" into element with xpath "//input[@formcontrolname='lastName']"
     Then I type "12345@abracadabra.com" into element with xpath "//input[@formcontrolname='email']"
     And I type "12345" into element with xpath "//input[@formcontrolname='group']"
     Then I type "12345" into element with xpath "//input[@formcontrolname='password']"
     And I type "12345" into element with xpath "//input[@formcontrolname='confirmPassword']"
     Then I click on element with xpath "//button[@type='submit']"
+    #Verify that error message show 'This Field is required' under First Name text field
     Then element with xpath "//input[@placeholder='First Name']/ancestor::mat-form-field/div[1]/..//mat-error[contains(text(),'This field is required')]" should contain text "This field is required"
     And I wait for 5 sec
