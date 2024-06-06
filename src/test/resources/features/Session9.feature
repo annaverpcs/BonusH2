@@ -1,6 +1,6 @@
 # Author: Anna V
 # Manual Test case : Jira-12345
-@smoke @regression
+ @regression
 Feature: Student Settings Experience
 
   Background:
