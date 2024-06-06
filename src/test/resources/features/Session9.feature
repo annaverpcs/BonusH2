@@ -26,6 +26,7 @@ Feature: Student Settings Experience
     Then element with xpath "//h4[contains(text(),'Settings')]" should be displayed
     Then I click on element with xpath "//span[contains(text(),'Change Your Name')]"
       #open pop up window
+    Then element with xpath "//h1[text()=\"Changing User's Name\"]" should be present
     Then I clear element with xpath "//input[@formcontrolname='name']"
     And I type "Abcdef" into element with xpath "//input[@formcontrolname='name']"
     Then I click on element with xpath "//div[@class='mat-dialog-actions']/../..//span[contains(text(),'Change')]"
